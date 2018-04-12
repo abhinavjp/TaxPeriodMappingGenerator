@@ -36,6 +36,10 @@ namespace TaxPeriodMappingGenerator
         public DateTime EndDateOfFortnight { get; set; }
         public DateTime StartDateOfFourWeek { get; set; }
         public DateTime EndDateOfFourWeek { get; set; }
+        public DateTime WeeklyPaymentDate { get; set; }
+        public DateTime FortnightlyPaymentDate { get; set; }
+        public DateTime FourWeeklyPaymentDate { get; set; }
+        public DateTime MonthlyPaymentDate { get; set; }
     }
 
     internal class TaxMonthDetails

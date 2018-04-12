@@ -32,14 +32,14 @@ namespace TaxPeriodMappingGenerator
             var startWeekOfFourWeek = 1;
             var endWeekOfFortnight = 0;
             var endWeekOfFourWeek = 0;
-            var startDateOfWeek = configuration.FirstPeriodStartDate;
-            var startDateOfFortNight = configuration.FirstPeriodStartDate;
-            var startDateOfFourWeek = configuration.FirstPeriodStartDate;
+            var startDateOfWeek = configuration.FirstPaymentDate.AddDays(-1* configuration.PaymentDateToPeriodEndDayDifference).AddDays(-6);
+            var startDateOfFortNight = configuration.FirstPaymentDate.AddDays(-1 * configuration.PaymentDateToPeriodEndDayDifference).AddDays(-13);
+            var startDateOfFourWeek = configuration.FirstPaymentDate.AddDays(-1 * configuration.PaymentDateToPeriodEndDayDifference).AddDays(-25);
             var weekNumberForMonth = 1;
 
             var lastStartWeekOfMonth = 1;
-            var lastWeekEndDate = configuration.FirstPeriodStartDate.AddDays(-1);
-            for (var currentDate = configuration.FirstPeriodStartDate; currentDate <= yearEndDate; currentDate = currentDate.AddDays(1))
+            var lastWeekEndDate = startDateOfWeek.AddDays(-1);
+            for (var currentDate = configuration.FirstPaymentDate.AddDays(-1 * configuration.PaymentDateToPeriodEndDayDifference); currentDate <= yearEndDate; currentDate = currentDate.AddDays(1))
             {
                 if (currentDate.DayOfWeek != configuration.WeekEndingDay) continue;
                 taxWeek++;

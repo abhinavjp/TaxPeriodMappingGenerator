@@ -8,12 +8,12 @@ namespace TaxPeriodMappingGenerator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var configuration = new TaxPeriodMappingConfiguration
             {
                 TaxYear = 2017,
-                FirstPeriodStartDate = new DateTime(2017,3,27),
+                FirstPaymentDate = new DateTime(2017,4,7),
                 YearStartDate = new DateTime(2017,4,6),
                 IsWeekEndingBasedOnYearStartDate = true
             };
